@@ -133,9 +133,44 @@
     3) Используя цикл for in для объекта (appData) вывести в консоль сообщение 
     "Наша программа включает в себя данные: " (вывести весь appData)
 
+    2.25/ 4 Часть
+ 
+    Задание по проекту
+    - Получить кнопку "Начать расчет" через id
+    - Получить все блоки в правой части программы через классы (которые имеют класс название-value, начиная с <div class="budget-value"></div> и заканчивая <div class="yearsavings-value"></div> )
+    - Получить поля (input) c обязательными расходами через класс (class=”expenses-item”)
+    - Получить кнопки “Утвердить” и “Рассчитать” через Tag, каждую в своей переменной
+    - Получить поля для ввода необязательных расходов (optionalexpenses-item) при помощи querySelectorAll
+    - Получить оставшиеся поля через querySelector (статьи возможного дохода, чекбокс, сумма, процент, год, месяц, день)
+    
 
 
 */
+
+let startBtn = document.getElementById('start'),
+    budgetValue = document.getElementsByClassName('budget-value')[0],
+    dayBudgetValue = document.getElementsByClassName('daybudget-value')[0],
+    levelValue = document.getElementsByClassName('level-value')[0],
+    expensesValue = document.getElementsByClassName('expenses-value')[0],
+    optionalExpensesValue = document.getElementsByClassName('optionalexpenses-value')[0],
+    incomeValue = document.getElementsByClassName('income-value')[0],
+    monthSavingsValue = document.getElementsByClassName('monthsavings-value')[0],
+    yearsavingsValue = document.getElementsByClassName('yearsavings-value')[0],
+
+    expensesItem = document.getElementsByClassName('expenses-item'),
+    expensesBtn = document.getElementsByTagName('button')[0],
+    optionalexpensesBtn = document.getElementsByTagName('button')[1],
+    countBudgetBtn = document.getElementsByTagName('button')[2],
+
+    optionalExpensesItem = document.querySelectorAll('.optionalexpenses-item'),
+
+    incomeItem = document.querySelector('.choose-income'),
+    checkSavings = document.querySelector('#savings'),
+    sumValue = document.querySelector('.choose-sum'),
+    percentValue = document.querySelector('.choose-percent'),
+    yearValue = document.querySelector('.year-value'),
+    monthValue = document.querySelector('.month-value'),
+    dayValue = document.querySelector('.day-value'); 
 
 let money, time;
 
@@ -226,6 +261,8 @@ let appData = {
 for(let key in appData) {
     console.log("Наша программа включает в себя данные: " + key + " - " + appData[key]);
 };
+
+
 
 
 
